@@ -137,4 +137,4 @@ var transporter = nodemailer.createTransport(smtpConfig);
 
 app.use('/auth',auth.router);
 app.use('/home',home)
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
