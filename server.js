@@ -92,20 +92,22 @@ app.get('/sessionUser', auth.checkAuthenticated, async(req,res)=>{
 });
 
 // mongoose 5.x no longer required the useMongoClient:true
-/* mongoose.connect('mongodb://root:udaymongo1@ds125618.mlab.com:25618/udaymongo', {useNewUrlParser:true}, (err)=>{
+ mongoose.connect('mongodb://root:udaymongo1@ds125618.mlab.com:25618/udaymongo', {useNewUrlParser:true}, (err)=>{
     if(!err){
         console.log('Mongo DB connected to MLab');
     }
 })
-*/
 
+
+/*
 mongoose.connect('mongodb://localhost:27017/admin', {useNewUrlParser:true}, (err)=>{
     if(!err){
         console.log('Mongo DB Connected to Local');
     }
 
 })
-
+*/
+/*
 var smtpConfig = {
     host: 'smtp.gmail.com',
     post:587,
@@ -133,8 +135,8 @@ var transporter = nodemailer.createTransport(smtpConfig);
         console.log('Email sent: ' + info.response);
     }
     });
-//});
+*/
 
 app.use('/auth',auth.router);
 app.use('/home',home)
-app.listen(process.env.PORT || 3000);
+app.listen( process.env.PORT | 3000);
